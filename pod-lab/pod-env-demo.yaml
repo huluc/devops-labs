@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-demo-pod
+spec:
+  containers:
+    - name: busybox
+      image: busybox:latest
+      env:
+        - name: MY_COLOR
+          value: "blue"
+        - name: MY_NUMBER
+          value: "42"
+      command:
+        - sh
+        - -c
+        - |
+          # Print environment variables, then sleep so we can exec in
+          env
+          sleep 3600
