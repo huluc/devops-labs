@@ -9,6 +9,7 @@ what I learned, and screenshots.
 | Lab | Technologies | What it shows |
 |---|---|---|
 | [CloudFormation: EC2 with Security Group](aws/cloudformation-ec2-with-sg) | CloudFormation, EC2, IaC | Template with parameters, two linked resources (`!GetAtt`) and outputs |
+| [CloudFormation: EC2 Server](aws/cloudformation-ec2) | CloudFormation, EC2, IaC | Stack lifecycle, change sets, resource replacement |
 
 ## Kubernetes
 
