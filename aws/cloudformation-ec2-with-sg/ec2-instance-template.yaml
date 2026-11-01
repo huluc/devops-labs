@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A simple template to deploy an EC2 instance with a security group
+ 
+Parameters:
+  KeyName:
+    Description: Name of an existing EC2 KeyPair
+    Type: AWS::EC2::KeyPair::KeyName
+    ConstraintDescription: must be the name of an existing EC2 KeyPair.
+ 
+Resources:
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow SSH and HTTP
+
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+ 
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.small
+      KeyName: !Ref KeyName
+      SecurityGroupIds:
+        - !GetAtt MySecurityGroup.GroupId
+      ImageId: ami-0b6d9d3d33ba97d99  # Replace with a valid Ubuntu AMI for your region
+ 
+Outputs:
+  InstanceID:
+    Description: ID of the created EC2 instance
+    Value: !Ref MyEC2Instance
