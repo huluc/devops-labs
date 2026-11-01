@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3                      # Maintain 3 Pod replicas
+  selector:
+    matchLabels:
+      app: nginx                   # The Deployment manages Pods with label "app: nginx"
+  template:
+    metadata:
+      labels:
+        app: nginx                 # Pods created by this Deployment carry label "app: nginx"
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.23     # Use the official nginx image, version 1.23.10
+          ports:
+            - containerPort: 80     # Inform Kubernetes that this container listens on port 80
+ 

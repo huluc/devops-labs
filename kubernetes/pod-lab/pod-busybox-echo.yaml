@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-echo-pod
+spec:
+  restartPolicy: Never
+  containers:
+    - name: busybox
+      image: busybox:latest
+      command:
+        - sh
+        - -c
+        - |
+          echo "Hello Kubernetes!"

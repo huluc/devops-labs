@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bad-image-pod
+spec:
+  containers:
+    - name: ghost
+      image: busybox:latest
+      command:
+        - sh
+        - -c
+        - |
+          echo "You won't see me"
+          sleep 3600
