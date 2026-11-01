@@ -1,0 +1,15 @@
+Resources:
+  EC2Server:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c230065b91270bc6
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - sg-01e37309d14080040
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 25
+      Tags:
+        - Key: Name
+          Value: cfn-ec2-hilal
