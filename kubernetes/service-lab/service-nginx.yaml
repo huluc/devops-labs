@@ -10,5 +10,5 @@ spec:
       port: 80               # The port that the Service will serve on
       targetPort: 80         # The port on the Pod’s container to forward traffic to
       nodePort: 30080
-  type: NodePort          # Exposes the Service only inside the cluster
+  type: NodePort          # Exposes the Service on each node’s IP at port 30080
  
