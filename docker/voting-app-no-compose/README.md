@@ -61,14 +61,3 @@ docker exec worker-app getent hosts redis   # resolves
 - Named volume for PostgreSQL data persistence
 - Pinned image versions instead of `:latest`
 
-## Screenshots
-
-| Step | Screenshot |
-|------|------------|
-| Build | ![](screenshots/01-build.png) |
-| Push | ![](screenshots/02-push.png) |
-| Networks | ![](screenshots/03-networks.png) |
-| Running containers | ![](screenshots/04-docker-ps.png) |
-| Isolation test | ![](screenshots/05-isolation-test.png) |
-| Vote | ![](screenshots/06-vote.png) |
-| Result | ![](screenshots/07-result.png) |
